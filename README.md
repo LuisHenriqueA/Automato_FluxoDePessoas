@@ -1,78 +1,64 @@
-# Simulação do Fluxo de Pessoas em uma Praça Pública com Autômatos Celulares
 
-## Descrição
-Este projeto implementa uma simulação do fluxo de pessoas em uma praça pública utilizando o **Jogo da Vida de Conway** como base conceitual. A praça é representada como uma grade bidimensional (30x30 células), onde cada célula pode estar vazia, ocupada por uma pessoa ou conter um obstáculo fixo (como árvores ou bancos).  
+# Simulação de Fluxo de Pessoas em Praça Pública com Autômato Celular
 
-A simulação demonstra como **comportamentos coletivos complexos** podem emergir a partir de **regras simples de interação local**.
+Este projeto implementa uma versão adaptada do **Jogo da Vida** de John Conway em Python, simulando o fluxo e a formação de grupos de pessoas em uma praça pública.  
+Além disso, obstáculos fixos (representando árvores ou estruturas) são posicionados aleatoriamente no espaço.
 
-## Regras da Simulação
-As regras do autômato celular foram adaptadas do Jogo da Vida para o contexto de pessoas na praça:
+## 📝 Contexto
 
-- **Isolamento**: uma pessoa sozinha (menos de dois vizinhos) deixa o espaço;  
-- **Superlotação**: uma pessoa com mais de três vizinhos também deixa o espaço;  
-- **Atração social**: um espaço vazio com exatamente três vizinhos é ocupado por uma nova pessoa;  
-- **Obstáculos fixos**: não mudam durante a simulação (representam árvores ou estruturas).  
+A simulação representa uma praça no centro de uma cidade, onde:
+- Cada célula da grade representa um pequeno espaço físico da praça.
+- Células **ocupadas** indicam a presença de uma pessoa.
+- Células **vazias** indicam espaço livre.
+- Células com **obstáculos** representam estruturas fixas (árvores, bancos, postes).
 
-A vizinhança é do tipo **Moore**, considerando os oito vizinhos ao redor de cada célula.
+As regras são baseadas no Jogo da Vida:
+- Uma pessoa permanece no local se houver exatamente 2 ou 3 pessoas vizinhas.
+- Uma pessoa aparece em um espaço vazio se houver exatamente 3 pessoas vizinhas.
+- Caso contrário, o espaço fica vazio.
+- Obstáculos nunca mudam de estado.
 
-## Funcionalidades
-- Grade 30x30 com densidade inicial de ocupação de 30%;  
-- 15 obstáculos posicionados aleatoriamente;  
-- Visualização animada com cores diferenciadas:  
-  - **Vermelho**: pessoa;  
-  - **Branco**: espaço vazio;  
-  - **Verde**: obstáculo;  
-- Exportação da simulação em **GIF animado**;  
-- Parâmetros fáceis de ajustar (densidade, número de obstáculos, tamanho da grade, número de iterações).
+## 🎯 Objetivo
 
-## Tecnologias Utilizadas
-- Python 3.x  
-- Numpy  
-- Matplotlib (para visualização e animação)  
-- Pillow (para salvar GIFs)
+Demonstrar como **autômatos celulares** podem ser aplicados para simular **dinâmicas de ocupação e movimento** em espaços públicos, auxiliando no planejamento urbano, arquitetura e ensino.
 
-## Como Rodar
-1. Clone o repositório:  
-```bash
-git clone <URL_DO_REPOSITORIO>
-Instale as dependências:
+## 📦 Requisitos
 
-bash
-Copiar
-Editar
-pip install numpy matplotlib pillow
-Execute o script:
+- Python 3.8+
+- Bibliotecas:
+  ```bash
+  pip install numpy matplotlib pillow
+  ```
 
-bash
-Copiar
-Editar
-python jogo_da_vida_praca.py
-O GIF da simulação será salvo como fluxo_pessoas_praca_obstaculos_aleatorios.gif.
+## ▶️ Como Executar
 
-Personalização
-Você pode alterar facilmente os parâmetros no início do script:
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/automato-praca.git
+   cd automato-praca
+   ```
 
-python
-Copiar
-Editar
-GRID_SIZE = 30           # tamanho da praça (grade)
-DENSIDADE_INICIAL = 0.3  # porcentagem inicial de pessoas
-NUM_OBSTACULOS = 15      # número de obstáculos (árvores, bancos, etc.)
-FRAMES = 100             # número de iterações da simulação
-INTERVALO_MS = 300       # intervalo entre frames (ms)
-Aplicações
-Ferramenta educacional para demonstrar comportamento emergente em sistemas complexos;
+2. Execute o script principal:
+   ```bash
+   python simulacao.py
+   ```
 
-Visualização simplificada do fluxo de pessoas em espaços públicos;
+3. Ao final, será gerado um arquivo `simulacao.gif` com a animação.
 
-Base para estudos mais avançados em planejamento urbano e dinâmica de multidões.
+## 📊 Parâmetros do Modelo
 
-Referências
-Conway, J.H. (1970). The Game of Life. Scientific American, 223(4), 4.
+- **Tamanho da grade:** 30x30 células
+- **Densidade inicial de ocupação:** 30%
+- **Número de obstáculos:** 15 (posicionados aleatoriamente)
+- **Número de gerações:** 50
 
-Wolfram, S. (2002). A New Kind of Science. Wolfram Media.
+## 📌 Exemplo de Uso
 
-Bandini, S., Manzoni, S., & Vizzari, G. (2009). Agent Based Modeling and Simulation: An Informatics Perspective. Journal of Artificial Societies and Social Simulation, 12(4), 4.
+Este modelo pode ser usado para:
+- Ensino de autômatos celulares.
+- Visualização de dinâmicas de grupos.
+- Simulação simplificada de fluxo de pessoas em eventos ou espaços abertos.
 
-Autor
-Luis Abreu
+## 📜 Licença
+
+Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
