@@ -34,16 +34,15 @@ Demonstrar como **autômatos celulares** podem ser aplicados para simular **din�
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/automato-praca.git
-   cd automato-praca
+   git clone https://github.com/LuisHenriqueA/Automato_FluxoDePessoas.git
    ```
 
 2. Execute o script principal:
    ```bash
-   python simulacao.py
+   python main.py
    ```
 
-3. Ao final, será gerado um arquivo `simulacao.gif` com a animação.
+3. Ao final, será gerado um gif com a animação.
 
 ## 📊 Parâmetros do Modelo
 
@@ -58,7 +57,3 @@ Este modelo pode ser usado para:
 - Ensino de autômatos celulares.
 - Visualização de dinâmicas de grupos.
 - Simulação simplificada de fluxo de pessoas em eventos ou espaços abertos.
-
-## 📜 Licença
-
-Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
